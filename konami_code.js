@@ -11,27 +11,27 @@ const codes = [
   "a"
 ];
 
-let index = 0;
-
+let counter = 0
 
 function konami(e) {
-  var key = e.key;
-  console.log(e.key)
+  var key = e.key
+  console.log(key)
   
-  if (key === codes[index]) {
-    index++;
-    
-    if (index === codes.length) {
-      alert("Congratulations!");
-      
-      index = 0;
-    }
+  if (key === codes[counter]) {
+    counter++
   } else {
-    index = 0;
+    counter = 0
   }
-}
   
-
+  if (counter === codes.length) {
+    alert("Congratulations")
+    counter = 0
+  }
+  
+  
+  
+  
+}
 
 
 
@@ -39,7 +39,6 @@ function konami(e) {
 function init() {
   const body = document.body;
   body.addEventListener('keydown',konami); {
+    konami(e);
   }
 }
-
-/* Don't need this: [38 up] [40 down] [37 left] [39 right] [66 b] [65 a]   */
